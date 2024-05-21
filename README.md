@@ -60,12 +60,12 @@ Repita esses passos para um novo arquivo chamado '.env.test', o que possibilitar
 
 Esse projeto utiliza as seguintes variáveis de ambiente:
 
-| Nome           | Descrição                                                        | Requerida |
-| -------------- | ---------------------------------------------------------------- | --------- |
-| DATABASE_URL   | Credenciais do banco de dados                                    | [x]       |
-| JWT_SECRET_KEY | Chave secreta do Token                                           | [x]       |
-| EXPIRES_IN     | Tempo de expiração do Token (ex.: "1h", "30m", etc.)             | [ ]       |
-| PORT           | Porta utilizada para o recebimento das requisições pelo servidor | [ ]       |
+| Nome           | Descrição                                                        | Obrigatório |
+| -------------- | ---------------------------------------------------------------- | ----------- |
+| DATABASE_URL   | Credenciais do banco de dados                                    | [x]         |
+| JWT_SECRET_KEY | Chave secreta do Token                                           | [x]         |
+| EXPIRES_IN     | Tempo de expiração do Token (ex.: "1h", "30m", etc.)             | [ ]         |
+| PORT           | Porta utilizada para o recebimento das requisições pelo servidor | [ ]         |
 
 ## Migração do banco de dados
 
@@ -258,7 +258,7 @@ Autorização:
 }
 ```
 
-Padrão de corpo da requisição (todos os campos opcionais):
+Padrão de corpo da requisição (todos os campos indicados são opcionais):
 
 ```json
 {
@@ -342,7 +342,7 @@ Não há a necessidade de envio de corpo na requisição.
 
 Padrão de resposta da requisição:
 
--   Status 204 - NO CONTENT
+-   Status 204 - NO CONTENT.
 -   Status 401 - UNAUTHORIZED:
 
 ```json
