@@ -1,0 +1,74 @@
+components:
+    schemas:
+        Car:
+            type: object
+            required:
+                - name
+                - brand
+                - year
+                - km
+                - userId
+            properties:
+                id:
+                    type: string
+                    readOnly: true
+                    example: ba9e8eef-0fa6-44fb-b08d-f839713903db
+                name:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: Car_name
+                description:
+                    type: string
+                    description: Optional
+                    maxLength: 255
+                    example: Car_description
+                    nullable: true
+                brand:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: Car_brand
+                year:
+                    type: integer
+                    description: Required
+                    example: 1990
+                km:
+                    type: integer
+                    description: Required
+                    example: 10000
+                userId:
+                    type: string
+                    description: Required
+                    example: f8397139-b08d-b08d-b08d-f839713903db
+        UpdateCar:
+            type: object
+            properties:
+                id:
+                    type: string
+                    readOnly: true
+                    example: ba9e8eef-0fa6-44fb-b08d-f839713903db
+                name:
+                    type: string
+                    description: Optional
+                    maxLength: 255
+                    example: Car_name
+                description:
+                    type: string
+                    description: Optional
+                    maxLength: 255
+                    example: Car_description
+                    nullable: true
+                brand:
+                    type: string
+                    description: Optional
+                    maxLength: 255
+                    example: Car_brand
+                year:
+                    type: integer
+                    description: Optional
+                    example: 1990
+                km:
+                    type: integer
+                    description: Optional
+                    example: 10000

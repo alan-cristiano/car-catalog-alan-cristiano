@@ -1,0 +1,82 @@
+components:
+    schemas:
+        User:
+            type: object
+            required:
+                - name
+                - email
+                - password
+            properties:
+                id:
+                    type: string
+                    readOnly: true
+                    example: 63a39781-ef3b-41a8-a022-4b835c2e0d09
+                name:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: User_name
+                email:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: User_email
+                password:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: User_password
+        UserRetrieve:
+            type: object
+            required:
+                - name
+                - email
+            properties:
+                id:
+                    type: string
+                    readOnly: true
+                    example: ba9e8eef-0fa6-44fb-b08d-f839713903db
+                name:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: User_name
+                email:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: User_email
+        UserLoginRequest:
+            type: object
+            required:
+                - email
+                - password
+            properties:
+                email:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: User_email
+                password:
+                    type: string
+                    description: Required
+                    maxLength: 255
+                    example: User_password
+        UserLoginReturn:
+            type: object
+            properties:
+                token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+                user:
+                    type: object
+                    properties:
+                        id:
+                            type: string
+                            example: 63a39781-ef3b-41a8-a022-4b835c2e0d09
+                        name:
+                            type: string
+                            example: User_name
+                        email:
+                            type: string
+                            example: User_email

@@ -1,0 +1,129 @@
+paths:
+    /cars:
+        get:
+            tags:
+                - Cars
+            summary: List cars
+            description: List all cars. User id can be provided to find cars by user.
+            parameters:
+                - name: userId
+                  in: query
+                  description: Filter cars by user id
+                  required: false
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Car"
+        post:
+            security:
+                - JWTAuth: []
+            tags:
+                - Cars
+            summary: Create a car
+            description: Create a car
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Car"
+            responses:
+                201:
+                    description: Created
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Car"
+                400:
+                    $ref: "#/components/responses/BadRequest"
+                401:
+                    $ref: "#/components/responses/UnauthorizedToken"
+                404:
+                    $ref: "#/components/responses/NotFound"
+    /cars/{id}:
+        get:
+            tags:
+                - Cars
+            summary: Retrieve a car
+            description: Retrieve a car by id
+            parameters:
+                - name: id
+                  in: path
+                  description: Car id
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Car"
+                404:
+                    $ref: "#/components/responses/NotFound"
+        patch:
+            security:
+                - JWTAuth: []
+            tags:
+                - Cars
+            summary: Update car data
+            description: Update a car by id
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/UpdateCar"
+            parameters:
+                - name: id
+                  in: path
+                  description: Car id
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Car"
+                400:
+                    $ref: "#/components/responses/BadRequest"
+                401:
+                    $ref: "#/components/responses/UnauthorizedToken"
+                403:
+                    $ref: "#/components/responses/Forbidden"
+                404:
+                    $ref: "#/components/responses/NotFound"
+        delete:
+            security:
+                - JWTAuth: []
+            tags:
+                - Cars
+            summary: Delete a car
+            description: Delete a car by id
+            parameters:
+                - name: id
+                  in: path
+                  description: Car id
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                204:
+                    description: No content.
+                401:
+                    $ref: "#/components/responses/UnauthorizedToken"
+                403:
+                    $ref: "#/components/responses/Forbidden"
+                404:
+                    $ref: "#/components/responses/NotFound"

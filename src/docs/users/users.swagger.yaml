@@ -1,0 +1,67 @@
+paths:
+    /users:
+        get:
+            security:
+                - JWTAuth: []
+            tags:
+                - Users
+            summary: List user data
+            description: List user data.
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/UserRetrieve"
+                401:
+                    $ref: "#/components/responses/UnauthorizedToken"
+                404:
+                    $ref: "#/components/responses/NotFound"
+        post:
+            tags:
+                - Users
+            summary: User register
+            description: User register.
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/User"
+            responses:
+                201:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/UserRetrieve"
+                400:
+                    $ref: "#/components/responses/BadRequest"
+                409:
+                    $ref: "#/components/responses/Conflict"
+    /users/login:
+        post:
+            tags:
+                - Users
+            summary: User login
+            description: User login.
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/UserLoginRequest"
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/UserLoginReturn"
+                400:
+                    $ref: "#/components/responses/BadRequest"
+                401:
+                    $ref: "#/components/responses/UnauthorizedLogin"
+                404:
+                    $ref: "#/components/responses/NotFound"

@@ -1,0 +1,80 @@
+components:
+    responses:
+        BadRequest:
+            description: Mal formed request body.
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ZodError"
+        UnauthorizedToken:
+            description: Invalid token.
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/UnauthorizedToken"
+        UnauthorizedLogin:
+            description: Invalid credentials.
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/UnauthorizedLogin"
+        Forbidden:
+            description: User must be the owner of the resource.
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/Forbidden"
+        NotFound:
+            description: Resource not found.
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/AppError"
+        Conflict:
+            description: Resource already registered.
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/Conflict"
+    schemas:
+        ZodError:
+            type: object
+            properties:
+                errors:
+                    type: object
+                    properties:
+                        km:
+                            type: array
+                            items:
+                                type: string
+                                example: "Expected number, received string"
+        AppError:
+            type: object
+            properties:
+                error:
+                    type: string
+                    example: Resource not found.
+        UnauthorizedToken:
+            type: object
+            properties:
+                error:
+                    type: string
+                    example: Token is required.
+        UnauthorizedLogin:
+            type: object
+            properties:
+                error:
+                    type: string
+                    example: E-mail and password doesn't match.
+        Forbidden:
+            type: object
+            properties:
+                error:
+                    type: string
+                    example: User must be the car owner.
+        Conflict:
+            type: object
+            properties:
+                error:
+                    type: string
+                    example: E-mail already registered.
