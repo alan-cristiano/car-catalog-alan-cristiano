@@ -3,7 +3,7 @@
 ## Descrição
 
 -   API Rest desenvolvida utilizando do framework Express (Node.js) com TypeScript que possibilita o registro de usuários e seus respectivos veículos na base de dados;
--   A aplicação visa demonstrar funcionalidades de validação e serialização de dados externos com Zod, autenticação de usuário e proteção de rotas via token JWT e gerenciamento de banco de dados com ORM Prisma e PostgreSQL;
+-   A aplicação visa demonstrar funcionalidades de validação e serialização de dados com Zod, autenticação de usuário e proteção de rotas via token JWT e gerenciamento de banco de dados com ORM Prisma e PostgreSQL;
 -   Desenvolvimento conforme padrão TDD (test driven development), implementando testes unitários e de integração;
 -   Projeto estruturado visando a escalabilidade e melhor manutenção do código. Para isso foi utilizado o padrão de design de software MVC (model-view-controller) e injeção de dependências utilizando a ferramenta Tsyringe;
 -   Utilização de logs customizados para melhor manutenção do código.
@@ -16,6 +16,17 @@
 -   [Zod](https://zod.dev/): Validação de dados;
 -   [Jest](https://jestjs.io/): Framework para desenvolvimento de testes automáticos. Nesse projeto utilizado, em conjunto a ferramenta Supertest, para os testes unitários e de integração;
 -   TypeScript: Linguagem de programação utilizada.
+
+## Funcionalidades da aplicação
+
+1. Registro de usuários;
+2. Após login e autenticação do usuário é possível:
+    - Listar dados do usuário;
+    - Registrar novos veículos;
+    - Listar todos os veículos registrados;
+    - Listar um veículo específico;
+    - Atualizar dados de um veículo existente;
+    - Excluir o registro de um veículo.
 
 ## Pré-requisitos
 
