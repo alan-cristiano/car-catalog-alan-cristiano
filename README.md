@@ -29,6 +29,10 @@
     - Atualizar dados de um veículo existente;
     - Excluir o registro de um veículo.
 
+### Diagrama entidade relacionamento
+
+![Diagrama entidade relacionamento](./src/docs/diagrams/car-catalog-diagram.PNG)
+
 ## Pré-requisitos
 
 -   [Git](https://git-scm.com/)
@@ -112,6 +116,10 @@ Acesse a documentação das rotas da API em http://localhost:3000/docs
 Acesse a documentação do Swagger no formato `json` em http://localhost:3000/docs.json
 
 ### Rotas da aplicação
+
+#### Diagrama de rotas
+
+![Diagrama de rotas](./src/docs/diagrams/car-catalog-routes.PNG)
 
 #### Endpoint /cars
 
