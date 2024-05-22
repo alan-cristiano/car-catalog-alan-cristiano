@@ -3,7 +3,8 @@
 ## Descrição
 
 -   API Rest desenvolvida utilizando do framework Express (Node.js) com TypeScript que possibilita o registro de usuários e seus respectivos veículos na base de dados;
--   A aplicação visa demonstrar funcionalidades de validação e serialização de dados com Zod, autenticação de usuário e proteção de rotas via token JWT e gerenciamento de banco de dados com ORM Prisma e PostgreSQL;
+-   A aplicação visa demonstrar funcionalidades de validação e serialização de dados com Zod, autenticação de usuário e proteção de rotas via token JWT;
+-   Gerenciamento de banco de dados relacional com Prisma ORM e PostgreSQL;
 -   Desenvolvimento conforme padrão TDD (test driven development), implementando testes unitários e de integração;
 -   Projeto estruturado visando a escalabilidade e melhor manutenção do código. Para isso foi utilizado o padrão de design de software MVC (model-view-controller) e injeção de dependências utilizando a ferramenta Tsyringe;
 -   Utilização de logs customizados para melhor manutenção do código.
