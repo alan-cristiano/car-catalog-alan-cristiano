@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors";
-import { decode, verify } from "jsonwebtoken";
+import { verify } from "jsonwebtoken";
 
 class AuthMiddleware {
     public isAuthenticated = (
